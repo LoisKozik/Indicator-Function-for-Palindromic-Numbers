@@ -11,4 +11,6 @@ $$D_2(n) = \prod_{k=1}^{\left\lfloor \log(n)+1 \right\rfloor} \left\lfloor \frac
 } \right\rfloor.$$
 
 
-With $$D_1(n) = D_2(n) = \left\{ \begin{array}{cl} 1 & \ \text{si n est un palindrome} \\ 0 & \ \text{sinon} \end{array} \right$$
+With 
+
+$$D_1(n) = D_2(n) = \left\{ \begin{array}{cl} 1 & \ \text{si n est un palindrome} \\ 0 & \ \text{sinon} \end{array} \right$$
