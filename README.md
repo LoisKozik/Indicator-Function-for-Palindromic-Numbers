@@ -12,7 +12,7 @@ $$D_2(n) = \prod_{k=1}^{\left\lfloor \log(n)+1 \right\rfloor} \left\lfloor \frac
 
 
 With
-
+$$f(x) = x^2  $$
 $$|x| = \left\{ \begin{array}{cl}
 x & : \ x \geq 0 \\
 -x & : \ x < 0
