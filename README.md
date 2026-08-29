@@ -2,21 +2,28 @@
 
 As demonstrated in the research paper, below are two function that can indicate if a integer $n$ is a palindromic number.
 
-$$D_1(n) = \left\lfloor \frac{1}{\left\lfloor \log(n)+1 \right\rfloor}  \sum_{k=1}^{\left\lfloor \log(n)+1 \right\rfloor}  \left\lfloor \frac{\left\lfloor 10 \bigg (\frac{n}{10^k} - \left\lfloor \frac{n}{10^k} \right\rfloor \bigg) + 1 \right\rfloor
-}{\left\lfloor 10 \bigg (\frac{n}{10^{\left\lfloor \log(n)+1 \right\rfloor}} - \left\lfloor \frac{n}{10^{\left\lfloor \log(n)+1 \right\rfloor}} \right\rfloor \bigg) + 1 \right\rfloor}  \right\rfloor  \left\lfloor \frac{\left\lfloor 10 \bigg (\frac{n}{10^{\left\lfloor \log(n)+1 \right\rfloor}} - \left\lfloor \frac{n}{10^{\left\lfloor \log(n)+1 \right\rfloor}} \right\rfloor \bigg) + 1 \right\rfloor}{\left\lfloor 10 \bigg (\frac{n}{10^k} - \left\lfloor \frac{n}{10^k} \right\rfloor \bigg) + 1 \right\rfloor
-} \right\rfloor  \right\rfloor$$
+$$D_1(n) = \left\lfloor
+\frac{1}{N(n)} \sum_{i=0}^{N(n)-1}
+\left\lfloor
+\frac{\left\lfloor 10\left(\frac{n}{10^{i+1}} - \left\lfloor \frac{n}{10^{i+1}} \right\rfloor\right) \right\rfloor\ + \epsilon}
+{\left\lfloor 10\left(\frac{n}{10^{N(n)-i}} - \left\lfloor \frac{n}{10^{N(n)-i}} \right\rfloor\right) \right\rfloor + \epsilon}
+\right\rfloor
+\cdot
+\left\lfloor
+\frac{\left\lfloor 10\left(\frac{n}{10^{N(n)-i}} - \left\lfloor \frac{n}{10^{N(n)-i}} \right\rfloor\right) \right\rfloor + \epsilon}
+{\left\lfloor 10\left(\frac{n}{10^{i+1}} - \left\lfloor \frac{n}{10^{i+1}} \right\rfloor\right) \right\rfloor + \epsilon}
+\right\rfloor
+\right\rfloor$$
 
-$$D_2(n) = \prod_{k=1}^{\left\lfloor \log(n)+1 \right\rfloor} \left\lfloor \frac{\left\lfloor 10 \bigg (\frac{n}{10^k} - \left\lfloor \frac{n}{10^k} \right\rfloor \bigg) + 1 \right\rfloor
-}{\left\lfloor 10 \bigg (\frac{n}{10^{\left\lfloor \log(n)+1 \right\rfloor}} - \left\lfloor \frac{n}{10^{\left\lfloor \log(n)+1 \right\rfloor}} \right\rfloor \bigg) + 1 \right\rfloor}  \right\rfloor  \left\lfloor \frac{\left\lfloor 10 \bigg (\frac{n}{10^{\left\lfloor \log(n)+1 \right\rfloor}} - \left\lfloor \frac{n}{10^{\left\lfloor \log(n)+1 \right\rfloor}} \right\rfloor \bigg) + 1 \right\rfloor}{\left\lfloor 10 \bigg (\frac{n}{10^k} - \left\lfloor \frac{n}{10^k} \right\rfloor \bigg) + 1 \right\rfloor
-} \right\rfloor.$$
+$$D_2(n) = \prod_{i=0}^{N(n)-1}
+\left\lfloor
+\frac{\left\lfloor 10\left(\frac{n}{10^{i+1}} - \left\lfloor \frac{n}{10^{i+1}} \right\rfloor\right) \right\rfloor\ + \epsilon}
+{\left\lfloor 10\left(\frac{n}{10^{N(n)-i}} - \left\lfloor \frac{n}{10^{N(n)-i}} \right\rfloor\right) \right\rfloor + \epsilon}
+\right\rfloor
+\cdot
+\left\lfloor
+\frac{\left\lfloor 10\left(\frac{n}{10^{N(n)-i}} - \left\lfloor \frac{n}{10^{N(n)-i}} \right\rfloor\right) \right\rfloor + \epsilon}
+{\left\lfloor 10\left(\frac{n}{10^{i+1}} - \left\lfloor \frac{n}{10^{i+1}} \right\rfloor\right) \right\rfloor + \epsilon}
+\right\rfloor.$$
 
-
-With
-$$f(x) = x^2  $$
-$$|x| = \left\{ \begin{array}{cl}
-x & : \ x \geq 0 \\
--x & : \ x < 0
-\end{array} \right.
-$$
-
-$$D_1(n) = D_2(n) = \left\{ \begin{array}{cl} 1 & \ \text{si n est un palindrome} \\ 0 & \ \text{sinon} \end{array} \right.$$
+Both function are equal to $1$ when $n$ is a palindromic number and are equel to $0$ otherwise.
