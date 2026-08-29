@@ -26,4 +26,4 @@ $$D_2(n) = \prod_{i=0}^{N(n)-1}
 {\left\lfloor 10\left(\frac{n}{10^{i+1}} - \left\lfloor \frac{n}{10^{i+1}} \right\rfloor\right) \right\rfloor + \epsilon}
 \right\rfloor.$$
 
-Both functions rerturn $1$ when $n$ is a palindromic number and $0$ otherwise.
+Both functions return $1$ when $n$ is a palindromic number and $0$ otherwise.
