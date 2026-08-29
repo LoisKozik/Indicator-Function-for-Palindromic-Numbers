@@ -11,6 +11,12 @@ $$D_2(n) = \prod_{k=1}^{\left\lfloor \log(n)+1 \right\rfloor} \left\lfloor \frac
 } \right\rfloor.$$
 
 
-With 
+With
+$$f(x) = x^2  $$
+$$|x| = \left\{ \begin{array}{cl}
+x & : \ x \geq 0 \\
+-x & : \ x < 0
+\end{array} \right.
+$$
 
 $$D_1(n) = D_2(n) = \left\{ \begin{array}{cl} 1 & \ \text{si n est un palindrome} \\ 0 & \ \text{sinon} \end{array} \right.$$
